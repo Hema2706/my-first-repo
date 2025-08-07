@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuickEats - Food Delivery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      background-color: #ff5722;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    nav {
+      background-color: #e64a19;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background-color: #fff3e0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin: 10px 0 20px;
+    }
+
+    .hero button {
+      padding: 12px 25px;
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 28px;
+    }
+
+    .food-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 20px;
+    }
+
+    .food-card {
+      width: 300px;
+      margin: 15px;
+      background-color: #fafafa;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .food-card h3 {
+      margin: 15px 0 5px;
+    }
+
+    .food-card p {
+      padding: 0 10px 15px;
+      color: #666;
+    }
+
+    .order-form {
+      background-color: #fff8f0;
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    .order-form h2 {
+      text-align: center;
+    }
+
+    .order-form label {
+      display: block;
+      margin: 15px 0 5px;
+    }
+
+    .order-form input, .order-form select, .order-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .order-form button {
+      background-color: #ff5722;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>QuickEats</h1>
+    <p>Hot Meals Delivered in Minutes!</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#order">Order</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Welcome to QuickEats</h1>
+    <p>Order your favorite food from top restaurants near you</p>
+    <button onclick="document.getElementById('order').scrollIntoView({ behavior: 'smooth' });">Order Now</button>
+  </section>
+
+  <h2 class="section-title" id="menu">Popular Dishes</h2>
+  <div class="food-gallery">
+    <div class="food-card">
+      <h3>Veggie Burger</h3>
+      <p>Crispy patty, fresh veggies, and soft bun. A classic bite!</p>
+    </div>
+    <div class="food-card">
+      <h3>Chicken Biryani</h3>
+      <p>Fragrant basmati rice with spiced chicken. Full of flavor!</p>
+    </div>
+    <div class="food-card">
+      <h3>Margherita Pizza</h3>
+      <p>Cheesy, tomato-rich pizza with fresh basil. Thin crust delight!</p>
+    </div>
+  </div>
+
+  <section class="order-form" id="order">
+    <h2>Place Your Order</h2>
+    <form>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="address">Delivery Address:</label>
+      <textarea id="address" rows="3" placeholder="Enter your address" required></textarea>
+
+      <label for="food">Select Dish:</label>
+      <select id="food" required>
+        <option value="">--Choose an item--</option>
+        <option value="burger">Veggie Burger</option>
+        <option value="biryani">Chicken Biryani</option>
+        <option value="pizza">Margherita Pizza</option>
+      </select>
+
+      <label for="phone">Contact Number:</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+      <button type="submit">Submit Order</button>
+    </form>
+  </section>
+
+  <footer id="contact">
+    <p>&copy; 2025 QuickEats | Email: support@quickeats.com | Phone: 123-456-7890</p>
+  </footer>
+
+</body>
+</html>
