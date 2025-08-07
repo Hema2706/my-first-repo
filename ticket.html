@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlyNow - Flight Ticket Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f0f8ff;
+      color: #333;
+    }
+
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .flights {
+      margin-top: 2rem;
+    }
+
+    .flight-card {
+      background: white;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+    }
+
+    .flight-card h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FlyNow - Book Your Flight</h1>
+  </header>
+
+  <div class="container">
+    <h2>Search Flights</h2>
+    <form id="flightForm">
+      <div class="form-group">
+        <label for="from">From:</label>
+        <input type="text" id="from" placeholder="City or Airport">
+      </div>
+      <div class="form-group">
+        <label for="to">To:</label>
+        <input type="text" id="to" placeholder="City or Airport">
+      </div>
+      <div class="form-group">
+        <label for="date">Departure Date:</label>
+        <input type="date" id="date">
+      </div>
+      <button type="button" onclick="searchFlights()">Search</button>
+    </form>
+
+    <div class="flights" id="flightsList">
+      <!-- Flights will be shown here -->
+    </div>
+  </div>
+
+  <script>
+    function searchFlights() {
+      const from = document.getElementById("from").value;
+      const to = document.getElementById("to").value;
+      const date = document.getElementById("date").value;
+
+      if (!from || !to || !date) {
+        alert("Please fill all fields");
+        return;
+      }
+
+      const flights = [
+        { airline: "AirJet", time: "10:00 AM", price: "₹4,500" },
+        { airline: "SkyWings", time: "12:30 PM", price: "₹5,200" },
+        { airline: "Indigo", time: "3:00 PM", price: "₹4,800" }
+      ];
+
+      let output = "<h2>Available Flights</h2>";
+
+      flights.forEach(flight => {
+        output += `
+          <div class="flight-card">
+            <h3>${flight.airline}</h3>
+            <p>Time: ${flight.time}</p>
+            <p>From: ${from} → To: ${to}</p>
+            <p>Date: ${date}</p>
+            <p>Price: ${flight.price}</p>
+            <button onclick="alert('Flight booked successfully!')">Book Now</button>
+          </div>
+        `;
+      });
+
+      document.getElementById("flightsList").innerHTML = output;
+    }
+  </script>
+
+</body>
+</html>
